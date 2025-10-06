@@ -1,0 +1,87 @@
+.formGroup {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.inputWrapper input,
+.inputWrapper select {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: transparent;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.inputWrapper input:focus,
+.inputWrapper select:focus {
+  border: 2px solid #004db9;
+  box-shadow: 0 0 0 2px rgba(0, 77, 185, 0.15);
+}
+
+.inputWrapper label {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  font-size: 16px;
+  color: #888;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: white;
+  padding: 0 4px;
+}
+
+.inputWrapper input:focus + label,
+.inputWrapper input:not(:placeholder-shown) + label,
+.inputWrapper select:focus + label,
+.inputWrapper select:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 12px;
+  color: #004db9;
+}
+
+.errorMessage {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.formColumns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.leftColumn,
+.rightColumn {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .formColumns {
+    flex-direction: column;
+  }
+}
+
+input[type="file"]::file-selector-button {
+  display: none;
+}
+
+.formTitle {
+  text-align: center;
+  margin-bottom: 24px;
+  color: rgb(3, 70, 126);
+}

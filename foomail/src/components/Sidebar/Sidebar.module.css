@@ -1,0 +1,213 @@
+.sidebar {
+  background-color: #f1f3f4;
+  font-family: Arial, sans-serif;
+  border-right: 1px solid #dadce0;
+  height: calc(100vh - 130px); 
+  margin-top: 20px;
+  position: relative;
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  border-radius: 0 12px 12px 0;
+}
+
+.open {
+  width: 240px;
+  padding: 16px;
+}
+
+.composeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c2e7ff;
+  color: #1967d2;
+  border: none;
+  padding: 12px;
+  border-radius: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.composeBtn:hover {
+  background-color: #a6d9ff;
+}
+
+.navButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 0 20px 20px 0;
+  font-size: 14px;
+  cursor: pointer;
+  color: #202124;
+}
+
+.navButton:hover {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+
+.labelsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.addLabelBtn {
+  background: none;
+  border: none;
+  color: #1a73e8;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.labelsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.labelItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  color: #202124;
+}
+
+.labelItem:hover {
+  background-color: #e8f0fe;
+}
+
+.labelName {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.labelMenuContainer {
+  position: relative;
+}
+
+.menuBtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #5f6368;
+}
+
+.menu {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #dadce0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 4px 0;
+  border-radius: 4px;
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  color: #202124;
+}
+
+.menu button:hover {
+  background-color: #f1f3f4;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.selectedLabel {
+  background-color: #e8f0fe;
+  font-weight: bold;
+  border-radius: 0 20px 20px 0;
+}
+
+.dark {
+  background-color: #121212;
+  border-color: #333;
+  color: #ddd;
+}
+
+.dark .composeBtn {
+  background-color: #004a99;
+  color: #cce4ff;
+}
+
+.dark .composeBtn:hover {
+  background-color: #003f7f;
+}
+
+.dark .navButton {
+  color: #ddd;
+}
+
+.dark .navButton:hover {
+  background-color: #003f7f;
+  color: #cce4ff;
+}
+
+.dark .labelsHeader h4,
+.dark .addLabelBtn {
+  color: #8ab4f8;
+}
+
+.dark .labelItem {
+  color: #ddd;
+}
+
+.dark .labelItem:hover {
+  background-color: #222;
+}
+
+.dark .labelMenuContainer .menu {
+  background-color: #222;
+  border-color: #444;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.9);
+}
+
+.dark .menu button {
+  color: #ddd;
+}
+
+.dark .menu button:hover {
+  background-color: #333;
+}
+
+.dark .error {
+  color: #ff6666;
+}
+
+
+
+
+

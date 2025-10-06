@@ -1,0 +1,22 @@
+# Build stage
+FROM node:20-alpine AS build
+
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY foomail/package*.json ./foomail/
+RUN cd foomail && npm install
+
+# Copy the rest of the frontend code
+COPY foomail/ ./foomail
+
+# Build the app
+RUN cd foomail && npm run build
+
+# Production stage using nginx
+FROM nginx:alpine
+
+COPY --from=build /app/foomail/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80

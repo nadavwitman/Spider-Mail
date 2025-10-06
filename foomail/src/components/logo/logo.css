@@ -1,0 +1,9 @@
+.logo {
+  width: 200px;
+  display: block;
+  margin: 0 auto 10px; 
+}
+
+.logo.with-margin {
+  margin-bottom: 24px; 
+}

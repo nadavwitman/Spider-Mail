@@ -1,0 +1,79 @@
+.send-button-wrapper {
+  position: relative;
+  display: inline-flex;
+  border-radius: 9999px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.send-main-btn,
+.send-dropdown-btn {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.send-main-btn {
+  border-right: 1px solid rgba(0,0,0,0.2);
+  border-radius: 9999px 0 0 9999px;
+}
+
+.send-dropdown-btn {
+  border-radius: 0 9999px 9999px 0;
+  padding: 8px 12px;
+}
+
+.send-menu {
+  position: absolute;
+  bottom: 100%;       
+  top: auto;         
+  right: 0;
+  left: 5%;
+  margin-bottom: 4px; 
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+  min-width: 160px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.send-menu-item {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.send-menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.open {
+  transform: rotate(180deg);
+}
+
+/* Dark mode styles for send menu */
+.send-menu.dark {
+  background: #2a2a2a;
+  border: 1px solid #555;
+  color: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.send-menu.dark .send-menu-item:hover {
+  background-color: #3a3a3a;
+}

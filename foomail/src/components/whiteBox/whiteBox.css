@@ -1,0 +1,36 @@
+.pageBackground {
+  background-color: #f5fcff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whiteBox {
+  background-color: white;
+  padding: 48px 64px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 1000px;
+  max-width: 95%;
+  text-align: center;
+}
+
+.mailRed {
+  color: rgb(176, 0, 0);
+}
+
+.spiderBlue {
+  color: rgb(3, 70, 126);
+}
+
+.h1style {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.pstyle {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: rgb(3, 70, 126);
+}

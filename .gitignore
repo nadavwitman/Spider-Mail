@@ -1,0 +1,8 @@
+test
+/.vscode
+build/
+**/build/
+/CMakeFiles
+/CMakeCache.txt
+/cmake_install.cmake
+node_modules

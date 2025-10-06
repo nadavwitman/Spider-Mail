@@ -1,0 +1,54 @@
+FROM gcc:12
+
+# Base deps
+RUN apt-get update && apt-get install -y \
+    build-essential cmake pkg-config git curl ca-certificates \
+    libssl-dev libsasl2-dev zlib1g-dev \
+ && rm -rf /var/lib/apt/lists/*
+
+# -------------------------------
+# Build & install MongoDB C Driver (C layer)
+# -------------------------------
+ARG MONGOC_VER=1.24.4
+RUN curl -L https://github.com/mongodb/mongo-c-driver/releases/download/${MONGOC_VER}/mongo-c-driver-${MONGOC_VER}.tar.gz \
+    | tar xz -C /tmp && \
+    mkdir -p /tmp/mongo-c-driver-${MONGOC_VER}/build && \
+    cd /tmp/mongo-c-driver-${MONGOC_VER}/build && \
+    cmake .. \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF \
+      -DENABLE_SASL=OFF \        
+      -DENABLE_SSL=OPENSSL && \
+    make -j"$(nproc)" && make install && ldconfig && \
+    rm -rf /tmp/mongo-c-driver-${MONGOC_VER}
+
+# -------------------------------
+# Build & install MongoDB C++ Driver (C++ layer)
+# -------------------------------
+ARG MONGOCXX_VER=r3.9.0
+RUN curl -L https://github.com/mongodb/mongo-cxx-driver/releases/download/${MONGOCXX_VER}/mongo-cxx-driver-${MONGOCXX_VER}.tar.gz \
+    | tar xz -C /tmp && \
+    mkdir -p /tmp/mongo-cxx-driver-${MONGOCXX_VER}/build && \
+    cd /tmp/mongo-cxx-driver-${MONGOCXX_VER}/build && \
+    cmake .. \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr/local \
+      -DCMAKE_PREFIX_PATH=/usr/local \
+      -DBUILD_SHARED_LIBS=ON \
+      -DBUILD_TESTING=OFF && \
+    make -j"$(nproc)" && make install && ldconfig && \
+    rm -rf /tmp/mongo-cxx-driver-${MONGOCXX_VER}
+
+# -------------------------------
+# Build your project
+# -------------------------------
+WORKDIR /usr/src/app
+COPY . .
+RUN mkdir -p build && cd build && \
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/local .. && \
+    make -j"$(nproc)"
+
+EXPOSE 4000
+WORKDIR /usr/src/app/build
+CMD ["./server", "4000", "8", "1"]

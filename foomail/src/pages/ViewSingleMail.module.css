@@ -1,0 +1,252 @@
+.container {
+  display: flex;
+  height: calc(100vh - 60px); 
+  margin-top: 40px;
+}
+
+.content {
+  flex: 1;
+  padding: 30px 60px;
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
+}
+
+.subject {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.metaRow div {
+  display: flex;
+  gap: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  color: #5f6368;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.body {
+  margin-top: 25px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 18px;
+}
+.outerWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+
+.label button {
+  background: none;
+  border: none;
+  font-weight: bold;
+  color: #5f6368;
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+}
+
+.label button:hover {
+  color: #d93025; 
+}
+
+
+.subjectRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;  
+  margin-bottom: 10px; 
+}
+
+.labelsRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 60vw; 
+}
+
+.label {
+  background-color: #e0e0e0;
+  color: #202124;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.noLabels {
+  color: #888;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.dark {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+.dark .container {
+  border-color: #333;
+}
+
+.dark .content {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+
+.dark .metaRow {
+  color: #bbb;
+  border-bottom-color: #444;
+}
+
+.dark .body {
+  background-color: #2a2a2a;
+  color: #ddd;
+}
+
+.dark .label {
+  background-color: #444;
+  color: #ddd;
+}
+
+.dark .label button {
+  color: #aaa;
+}
+
+.dark .label button:hover {
+  color: #ff6b6b;
+}
+
+.dark .actions {
+  color: #ccc;
+}
+
+.dark .loading,
+.dark .error {
+  color: #ddd;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 20px;
+  color: #333;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.iconButton:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.iconButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+  border-radius: 4px;
+}
+.attachmentHeader {
+  font-size: 0.9rem; 
+  margin-bottom: 0.5rem;
+  font-weight: 600; 
+}
+
+.attachmentGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; 
+  margin-top: 0.5rem;
+}
+
+.attachmentItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  height: 100px; 
+  cursor: pointer;
+  text-align: center;
+  color: #1a73e8;
+  justify-content: center;
+}
+
+.attachmentIcon {
+  font-size: 60px; 
+  width: 80px;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.attachmentName {
+  font-size: 0.7rem;
+  word-break: break-word; 
+}
+
+.attachmentItem img {
+  width: 120%;
+  height: 88px; 
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
+
+.attachmentItem:hover img {
+  border-color: #1a73e8;
+}
+
+.attachmentList {     
+  display: flex;
+  flex-wrap: wrap;      
+  gap: 30px;         
+  padding: 0;
+  margin: 0.5rem 0;
+  list-style: none;
+}
+
+.dark .iconButton i {
+  color: #fff ;
+}
+
+.dark .iconButton:hover i {
+  color: #90caf9 ;
+}

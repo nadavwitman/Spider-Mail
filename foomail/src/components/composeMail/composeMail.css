@@ -1,0 +1,261 @@
+.compose-closed-bar {
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  width: 280px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 0 10px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.compose-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.compose-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.compose-controls button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #444;
+  padding: 4px;
+}
+
+.compose-controls button:hover {
+  color: #000;
+}
+
+.compose-mail-box {
+  position: fixed;
+  background-color: white;
+  border: 1px solid #ffffff;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.compose-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.compose-header-unified {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.compose-mail-box input[type="text"],
+.compose-mail-box input[type="datetime-local"],
+.compose-mail-box textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-top: 5px;
+  resize: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.compose-mail-box textarea {
+  min-height: 120px;
+  padding: 10px 0;
+}
+
+.draft-status {
+  color: green;
+  font-size: 13px;
+  margin-top: 8px;
+  align-self: flex-start;
+}
+
+.compose-mail-box.mid {
+  width: 500px;
+  bottom: 0;
+  right: 30px;
+  max-height: 400px;
+}
+
+.compose-mail-box.full {
+  width: 100%;
+  max-width: 900px;
+  height: 80%;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.compose-mail-box.full textarea {
+  min-height: 349px; 
+}
+
+.compose-mail-box.mid textarea {
+  min-height: 120px;
+}
+
+.compose-mail-box input[type="text"],
+.compose-mail-box textarea {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.compose-mail-box input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  background: none;
+}
+
+.compose-mail-box input[type="text"]::placeholder,
+.compose-mail-box textarea::placeholder {
+  color: #888;
+}
+
+.send-attachment-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+  margin-top: 10px;
+  gap: 12px;
+  position: relative; 
+  overflow: visible;  
+}
+
+.send-attachment-bar > * {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .compose-mail-box.mid,
+  .compose-mail-box.full {
+    width: calc(100% - 20px);
+    right: 10px;
+    left: 10px;
+  }
+
+  .compose-closed-bar {
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+}
+
+.recipient-suggestions {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.suggestion-item {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #ffffff; 
+  border: 1px solid #e0e0e0; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  font-size: 14px;
+  color: #333;
+}
+
+.suggestion-item:hover {
+  background: #f5faff;
+  transform: scale(1.01);
+}
+
+.suggestion-item strong {
+  font-weight: 600;
+  color: #1a237e;
+}
+
+.suggestion-item .full-name {
+  font-size: 12px;
+  color: #666;
+  margin-top: 3px;
+}
+
+.recipient-tag-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.compose-mail-box.dark {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #f5f5f5;
+}
+
+.compose-mail-box.dark .compose-title {
+  color: #f5f5f5;
+}
+
+.compose-mail-box.dark .compose-controls button {
+  color: #ccc;
+}
+
+.compose-mail-box.dark .compose-controls button:hover {
+  color: #d41d1d;
+}
+
+.compose-mail-box.dark input[type="text"],
+.compose-mail-box.dark input[type="datetime-local"],
+.compose-mail-box.dark textarea {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #f5f5f5;
+}
+
+.compose-mail-box.dark input[type="text"]::placeholder,
+.compose-mail-box.dark textarea::placeholder {
+  color: #aaa;
+}
+
+.compose-mail-box.dark .send-attachment-bar {
+  border-top: 1px solid #444;
+}
+
+.compose-mail-box.dark .suggestion-item {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #f5f5f5;
+}
+
+.compose-mail-box.dark .suggestion-item:hover {
+  background: #333;
+}
+
+.compose-mail-box.dark .suggestion-item strong {
+  color: #90caf9; 
+}
+
+.compose-mail-box.dark .suggestion-item .full-name {
+  color: #bbb;
+}
+

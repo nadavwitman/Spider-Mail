@@ -1,0 +1,122 @@
+.thread-view {
+  padding: 1rem;
+}
+
+.mail-card {
+  border-left: 2px solid #ccc;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+}
+
+.mail-header {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.mail-subject {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.mail-body {
+  white-space: pre-wrap;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.mail-time {
+  float: right;
+  font-size: 0.8rem;
+  color: #ca1f1f;
+}
+
+.attachmentHeader {
+  font-size: 0.9rem; 
+  margin-bottom: 0.5rem;
+  font-weight: 600; 
+}
+
+.attachmentList {     
+  display: flex;
+  flex-wrap: wrap;      
+  gap: 30px;         
+  padding: 0;
+  margin: 0.5rem 0;
+  list-style: none;
+}
+
+.attachmentItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+  height: 100px; 
+  cursor: pointer;
+  text-align: center;
+  color: #1a73e8;
+}
+
+.attachmentIcon {
+  font-size: 70px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  padding-bottom: 8px;
+}
+
+.attachmentName {
+  font-size: 0.7rem;
+  word-break: break-word;
+}
+
+.attachmentItem img {
+  width: 120%;
+  height: 88px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
+
+.attachmentItem:hover img,
+.attachmentItem:hover .attachmentIcon {
+  border-color: #1a73e8;
+}
+
+.dark {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.dark .threadDivider {
+  border-color: #444;
+}
+
+.dark .attachmentItem {
+  color: #90caf9;
+}
+
+.dark .attachmentIcon {
+  border-color: #555;
+}
+
+.dark .attachmentItem:hover img,
+.dark .attachmentItem:hover .attachmentIcon {
+  border-color: #90caf9;
+}
+
+.dark .label {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+.dark .removeLabelBtn {
+  color: #f5f5f5;
+}

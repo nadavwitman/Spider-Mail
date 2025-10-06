@@ -1,0 +1,38 @@
+.attachment-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+  filter: grayscale(100%) contrast(120%);
+  margin-top: 0;
+  margin-inline-start: auto; 
+  color: inherit; 
+}
+
+.compose-mail-box.dark .attachment-controls i {
+  color: white;
+}
+
+
+.attachment-controls label,
+.attachment-controls button {
+  cursor: pointer;
+  filter: grayscale(100%) contrast(120%);
+  transition: filter 0.2s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.attachment-controls label:hover,
+.attachment-controls button:hover {
+  filter: grayscale(0%);
+} 
+
+.trash-size {
+    font-size: 20px;
+}
+

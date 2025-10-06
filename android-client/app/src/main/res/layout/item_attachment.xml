@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Medium-sized image preview -->
+    <ImageView
+        android:id="@+id/attachmentPreview"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/attachment_preview"
+        android:visibility="gone"
+        android:layout_marginBottom="4dp" />
+
+    <!-- File icon for non-image files -->
+    <ImageView
+        android:id="@+id/attachmentIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@android:drawable/ic_menu_save"
+        android:contentDescription="@string/attachment_file_icon"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Smaller file name text -->
+    <TextView
+        android:id="@+id/attachmentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@android:color/black"
+        android:paddingTop="2dp"
+        android:paddingBottom="4dp" />
+
+</LinearLayout>

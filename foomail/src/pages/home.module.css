@@ -1,0 +1,18 @@
+.mailRed {
+  color: rgb(176, 0, 0);
+}
+
+.spiderBlue {
+  color: rgb(3, 70, 126);
+}
+
+h1 {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: rgb(3, 70, 126);
+}

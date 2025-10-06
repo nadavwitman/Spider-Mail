@@ -1,0 +1,35 @@
+.recipient-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0f0ff;
+  color: #0366d6;
+  border-radius: 12px;
+  padding: 2px 8px;
+  margin: 0 6px 6px 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.recipient-tag:hover {
+  background-color: #c0defe;
+}
+
+.recipient-tag-remove {
+  background: transparent;
+  border: none;
+  color: #666;
+  font-weight: bold;
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.recipient-tag-remove:hover {
+  color: #ff4444;
+}

@@ -1,0 +1,72 @@
+version: "3.8"
+
+services:
+  server:
+    container_name: server2
+    build:
+      context: .
+      dockerfile: Dockerfile.main
+    ports:
+      - "4000:4000"
+    tty: true
+    stdin_open: true
+    entrypoint: ["./server"]
+    command: ["4000", "8", "1"]
+    networks:
+      - ex3net
+    environment:
+      - CONNECTION_STRING=mongodb://mongo:27017/spider
+    depends_on:
+      - mongo
+
+  node_app:
+    container_name: server3
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    ports:
+      - "3000:3000"
+    working_dir: /usr/src/app
+    depends_on:
+      - server
+      - mongo
+    networks:
+      - ex3net
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - CONNECTION_STRING=mongodb://mongo:27017/spider
+    command: node app.js
+
+  react_frontend:
+    container_name: front
+    build:
+      context: .
+      dockerfile: Dockerfile.react
+    working_dir: /app/foomail
+    volumes:
+      - ./foomail:/app/foomail
+    ports:
+      - "5000:80"
+    depends_on:
+      - node_app
+    networks:
+      - ex3net
+
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"  
+    networks:
+      - ex3net
+    volumes:
+      - mongo_data:/data/db
+
+networks:
+  ex3net:
+    driver: bridge
+
+volumes:
+  mongo_data:
